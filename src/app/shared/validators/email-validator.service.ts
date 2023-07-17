@@ -31,6 +31,8 @@ export class EmailValidator implements AsyncValidator {
     return httpCallObservable;
   }
 
+
+
   // original validation
   /*   validate(
     control: AbstractControl<any, any>
