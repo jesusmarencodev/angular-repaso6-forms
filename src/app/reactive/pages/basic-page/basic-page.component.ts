@@ -68,7 +68,7 @@ export class BasicPageComponent implements OnInit {
 
     console.log(this.myForm.value);
 
-    //does'nt is necessary restore strings
+    //doesn't is necessary restore strings
     this.myForm.reset({ price: 0, inStorage: 0 });
   }
 }
