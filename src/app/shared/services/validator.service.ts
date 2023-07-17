@@ -18,10 +18,7 @@ export class ValidatorService {
     return null;
   };
 
-
-  isValidField(form:FormGroup, field:string):boolean | null {
-    return (
-      form.controls[field].errors && form.controls[field].touched
-    );
+  isValidField(form: FormGroup, field: string): boolean | null {
+    return form.controls[field].errors && form.controls[field].touched;
   }
 }

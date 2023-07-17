@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { cantBeStrider } from 'src/app/shared/validators/helpers';
 import { ValidatorService } from '../../../shared/services/validator.service';
+import { EmailValidator } from '../../../shared/validators/email-validator.service';
 
 @Component({
   selector: 'app-register-page',
@@ -23,6 +24,7 @@ export class RegisterPageComponent {
         Validators.required,
         Validators.pattern(this.validatorService.emailPattern),
       ],
+      [this.emailValidator.validate],
     ],
     username: ['', [Validators.required, cantBeStrider]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -31,7 +33,8 @@ export class RegisterPageComponent {
 
   constructor(
     private fb: FormBuilder,
-    private validatorService: ValidatorService
+    private validatorService: ValidatorService,
+    private emailValidator: EmailValidator
   ) {}
 
   isValidField(field: string) {
